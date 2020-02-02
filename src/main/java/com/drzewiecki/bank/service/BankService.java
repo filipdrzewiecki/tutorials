@@ -9,7 +9,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
+
+import static com.drzewiecki.bank.service.UidService.generateUid;
 
 @Slf4j
 @Transactional(rollbackFor = Exception.class)
@@ -21,21 +24,30 @@ public class BankService implements ServiceOrm<Bank, NewBankForm> {
 
     @Override
     public Bank createNew(NewBankForm form) {
-        return null;
+        Bank bank = assembleFromForm(form);
+        return bankRepository.save(bank);
     }
 
     @Override
     public Bank getByUid(String uid) {
-        return null;
+        return bankRepository.findByBankUid(uid).orElseThrow(EntityNotFoundException::new);
     }
 
     @Override
     public Bank getById(long id) {
-        return null;
+        return bankRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
     @Override
     public List<Bank> getAll() {
-        return null;
+        return bankRepository.findAll();
     }
+
+    private Bank assembleFromForm(NewBankForm form) {
+        return Bank.builder()
+                .name(form.getName())
+                .bankUid(generateUid(Bank.class))
+                .build();
+    }
+
 }
