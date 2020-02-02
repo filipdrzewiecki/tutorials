@@ -43,11 +43,13 @@ public class BankAccountService implements ServiceOrm<BankAccount, NewBankAccoun
     }
 
     @Override
+    @Transactional(readOnly = true)
     public BankAccount getById(long id) {
         return bankAccountRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<BankAccount> getAll() {
         return bankAccountRepository.findAll();
     }

@@ -23,22 +23,26 @@ public class CustomerService implements ServiceOrm<Customer, NewCustomerForm> {
     private final CustomerRepository customerRepository;
 
     @Override
+    @Transactional
     public Customer createNew(NewCustomerForm form) {
         Customer customer = assembleFromForm(form);
         return customerRepository.save(customer);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Customer getByUid(String uid) {
         return customerRepository.findByCustomerUid(uid).orElseThrow(EntityNotFoundException::new);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Customer getById(long id) {
         return customerRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Customer> getAll() {
         return customerRepository.findAll();
     }

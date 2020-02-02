@@ -23,22 +23,26 @@ public class BankService implements ServiceOrm<Bank, NewBankForm> {
     private final BankRepository bankRepository;
 
     @Override
+    @Transactional
     public Bank createNew(NewBankForm form) {
         Bank bank = assembleFromForm(form);
         return bankRepository.save(bank);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Bank getByUid(String uid) {
         return bankRepository.findByBankUid(uid).orElseThrow(EntityNotFoundException::new);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Bank getById(long id) {
         return bankRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Bank> getAll() {
         return bankRepository.findAll();
     }
