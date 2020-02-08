@@ -24,9 +24,9 @@ public class BankAccountController {
         return ResponseEntity.status(HttpStatus.CREATED).body(BankAccount);
     }
 
-    @GetMapping("/{BankAccountUid}")
-    public BankAccount getBankAccount(@PathVariable("BankAccountUid") final String BankAccountUid) {
-        return bankAccountService.getByUid(BankAccountUid);
+    @GetMapping("/{bankAccountUid}")
+    public BankAccount getBankAccount(@PathVariable("bankAccountUid") final String bankAccountUid) {
+        return bankAccountService.getByUid(bankAccountUid);
     }
 
     @GetMapping()
