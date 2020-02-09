@@ -109,4 +109,65 @@ insert into bank_account (id, account_uid, money, bank_id, customer_id)
 select * from (select 10 as id, 'BankAc-000010' as account_uid, 100.11 as money, 1 as bank_id, 1 as customer_id) source
 where not exists (select id, account_uid from bank_account where bank_account.id = source.id);
 
+####################### ROLES #######################
 
+insert into role (id, role_name)
+select * from (select 999 as id, 'Dummy' as role_name) source
+where not exists (select id from role where role.id = source.id);
+
+insert into role (id, role_name)
+select * from (select 1 as id, 'EMPLOYEE' as role_name) source
+where not exists (select id from role where role.id = source.id);
+
+insert into role (id, role_name)
+select * from (select 2 as id, 'ADMIN' as role_name) source
+where not exists (select id from role where role.id = source.id);
+
+
+####################### EMPLOYEES #######################
+
+insert into employee (id, employee_uid, last_name, name)
+select * from (select 999 as id, 'Employ-000999' as employee_uid, 'Dummy' as last_name, 'Dummy' as name) source
+where not exists (select id, employee_uid from employee where employee.id = source.id);
+
+insert into employee (id, employee_uid, last_name, name)
+select * from (select 1 as id, 'Employ-000001' as employee_uid, 'Juan' as last_name, 'Salsa' as name) source
+where not exists (select id, employee_uid from employee where employee.id = source.id);
+
+insert into employee (id, employee_uid, last_name, name)
+select * from (select 2 as id, 'Employ-000002' as employee_uid, 'Amparo' as last_name, 'Porta' as name) source
+where not exists (select id, employee_uid from employee where employee.id = source.id);
+
+
+####################### USERS ####################### ## '{bcrypt}$2a$10$7f9HZrDXUwGDm5Vm2n3EM.aeHDTyENUGzZB36mx4IczCNN79vwrk6' = 'password' ##
+
+insert into user (id, employee_uid, password, user_name)
+select * from (select 999 as id, 'Employ-000999' as employee_uid, 'Dummy' as password, 'Dummy' as user_name) source
+where not exists (select id, employee_uid from user where user.id = source.id);
+
+insert into user (id, employee_uid, password, user_name)
+select * from (select 1 as id, 'Employ-000001' as employee_uid, '{bcrypt}$2a$10$7f9HZrDXUwGDm5Vm2n3EM.aeHDTyENUGzZB36mx4IczCNN79vwrk6' as password, 'Salsa' as user_name) source
+where not exists (select id, employee_uid from user where user.id = source.id);
+
+insert into user (id, employee_uid, password, user_name)
+select * from (select 2 as id, 'Employ-000002' as employee_uid, '{bcrypt}$2a$10$7f9HZrDXUwGDm5Vm2n3EM.aeHDTyENUGzZB36mx4IczCNN79vwrk6' as password, 'Porta' as user_name) source
+where not exists (select id, employee_uid from user where user.id = source.id);
+
+
+####################### USER_ROLE #######################
+
+insert into user_role (user_id, role_id)
+select * from (select 999 as user_id, 999 as role_id) source
+where not exists (select user_id, role_id from user_role where user_role.user_id = source.user_id and user_role.role_id = source.role_id);
+
+insert into user_role (user_id, role_id)
+select * from (select 1 as user_id, 1 as role_id) source
+where not exists (select user_id, role_id from user_role where user_role.user_id = source.user_id and user_role.role_id = source.role_id);
+
+insert into user_role (user_id, role_id)
+select * from (select 2 as user_id, 1 as role_id) source
+where not exists (select user_id, role_id from user_role where user_role.user_id = source.user_id and user_role.role_id = source.role_id);
+
+insert into user_role (user_id, role_id)
+select * from (select 2 as user_id, 2 as role_id) source
+where not exists (select user_id, role_id from user_role where user_role.user_id = source.user_id and user_role.role_id = source.role_id);

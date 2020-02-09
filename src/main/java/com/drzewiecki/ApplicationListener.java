@@ -1,8 +1,12 @@
-package com.drzewiecki.bank;
+package com.drzewiecki;
 
 import com.drzewiecki.bank.service.BankAccountService;
 import com.drzewiecki.bank.service.BankService;
 import com.drzewiecki.bank.service.CustomerService;
+import com.drzewiecki.security.Service.EmployeeService;
+import com.drzewiecki.security.Service.UserService;
+import com.drzewiecki.security.entity.Employee;
+import com.drzewiecki.security.entity.User;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -21,6 +25,8 @@ public class ApplicationListener {
     private final CustomerService customerService;
     private final BankService bankService;
     private final BankAccountService bankAccountService;
+    private final UserService userService;
+    private final EmployeeService employeeService;
 
     @Transactional
     @EventListener
