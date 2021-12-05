@@ -1,1 +1,1 @@
-docker run -dit --name tutorialsDb -e MYSQL_ROOT_PASSWORD=rootPassword -e MYSQL_DATABASE=tutorialsDb -e MYSQL_USER=dev -e MYSQL_PASSWORD=dev -p 3306:3306 mariadb:10
+docker run -dit --name tutorialsDb -e POSTGRES_DB=rootPassword -e POSTGRES_USER=dev -e POSTGRES_PASSWORD=dev -p 5432:5432 postgres:13.2
