@@ -1,4 +1,4 @@
-package com.drzewiecki.jms.controller;
+package com.drzewiecki.activemq.controller;
 
 import lombok.Data;
 

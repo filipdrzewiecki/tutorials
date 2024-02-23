@@ -1,7 +1,6 @@
-package com.drzewiecki.jms.controller;
+package com.drzewiecki.activemq.controller;
 
-import com.drzewiecki.jms.component.Producer;
-import jakarta.jms.Queue;
+import com.drzewiecki.activemq.component.producer.Producer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
