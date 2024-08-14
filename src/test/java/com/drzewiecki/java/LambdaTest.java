@@ -9,8 +9,6 @@ import java.util.function.Consumer;
 
 public class LambdaTest {
 
-    private static Consumer<List<String>> UPPER =
-
     @Test
     void testConsumer() {
         Consumer<List<String>> upper = list -> {
