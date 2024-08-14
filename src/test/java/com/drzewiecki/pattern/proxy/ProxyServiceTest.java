@@ -5,8 +5,9 @@ import org.junit.jupiter.api.Test;
 public class ProxyServiceTest {
 
     @Test
-    void testProxyService() {
+    void testProxyService() throws Exception {
         Service service = new ObjectServiceProxy();
         service.process();
+        throw new Exception();
     }
 }
