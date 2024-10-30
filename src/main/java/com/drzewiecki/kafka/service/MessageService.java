@@ -2,10 +2,12 @@ package com.drzewiecki.kafka.service;
 
 import com.drzewiecki.kafka.controller.Message;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile("kafka")
 @RequiredArgsConstructor
 public class MessageService {
 
