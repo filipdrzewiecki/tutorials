@@ -1,2 +1,4 @@
-package com.drzewiecki.java.collection;public class MapTest {
+package com.drzewiecki.java.collection;
+
+public class MapTest {
 }

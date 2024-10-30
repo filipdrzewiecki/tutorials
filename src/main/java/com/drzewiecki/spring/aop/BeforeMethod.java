@@ -1,2 +1,4 @@
-package com.drzewiecki.spring.aop;public @interface BeforeMethod {
+package com.drzewiecki.spring.aop;
+
+public @interface BeforeMethod {
 }

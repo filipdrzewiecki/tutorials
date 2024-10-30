@@ -1,2 +1,9 @@
-package com.drzewiecki.spring.aop;public class Car {
+package com.drzewiecki.spring.aop;
+
+import lombok.Data;
+
+@Data
+public class Car {
+
+    private String name;
 }
