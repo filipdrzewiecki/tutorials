@@ -1,6 +1,6 @@
-package com.drzewiecki.activemq.component.producer;
+package com.drzewiecki.jms.activemq.component.producer;
 
-import com.drzewiecki.activemq.component.Order;
+import com.drzewiecki.jms.activemq.component.Order;
 import jakarta.jms.Destination;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

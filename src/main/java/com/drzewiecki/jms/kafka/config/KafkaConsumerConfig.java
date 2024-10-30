@@ -1,4 +1,4 @@
-package com.drzewiecki.kafka.config;
+package com.drzewiecki.jms.kafka.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerConfig;

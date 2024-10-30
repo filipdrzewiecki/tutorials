@@ -1,6 +1,6 @@
-package com.drzewiecki.activemq.component.consumer;
+package com.drzewiecki.jms.activemq.component.consumer;
 
-import com.drzewiecki.activemq.component.Order;
+import com.drzewiecki.jms.activemq.component.Order;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;

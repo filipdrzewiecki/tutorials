@@ -1,6 +1,6 @@
-package com.drzewiecki.kafka.service;
+package com.drzewiecki.jms.kafka.service;
 
-import com.drzewiecki.kafka.controller.Message;
+import com.drzewiecki.jms.kafka.controller.Message;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.kafka.core.KafkaTemplate;

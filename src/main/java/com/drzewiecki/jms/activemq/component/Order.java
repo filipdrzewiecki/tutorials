@@ -1,4 +1,4 @@
-package com.drzewiecki.activemq.component;
+package com.drzewiecki.jms.activemq.component;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

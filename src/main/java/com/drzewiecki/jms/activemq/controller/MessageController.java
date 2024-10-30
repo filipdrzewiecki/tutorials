@@ -1,6 +1,6 @@
-package com.drzewiecki.activemq.controller;
+package com.drzewiecki.jms.activemq.controller;
 
-import com.drzewiecki.activemq.component.producer.Producer;
+import com.drzewiecki.jms.activemq.component.producer.Producer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

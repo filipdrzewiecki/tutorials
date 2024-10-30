@@ -1,4 +1,4 @@
-package com.drzewiecki.activemq.config;
+package com.drzewiecki.jms.activemq.config;
 
 import jakarta.jms.ConnectionFactory;
 import lombok.extern.slf4j.Slf4j;

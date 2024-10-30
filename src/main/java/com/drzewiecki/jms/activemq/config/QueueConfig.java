@@ -1,4 +1,4 @@
-package com.drzewiecki.activemq.config;
+package com.drzewiecki.jms.activemq.config;
 
 import jakarta.jms.Destination;
 import org.apache.activemq.artemis.jms.client.ActiveMQQueue;
